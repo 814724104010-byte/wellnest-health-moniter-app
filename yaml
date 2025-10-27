@@ -1,0 +1,24 @@
+
+---
+
+## 🧠 How It Works
+- A separate **thread** continuously generates health values
+- The UI is updated using `Platform.runLater()` for thread-safe operations
+- Alerts are shown if values go out of safe range
+
+---
+
+## 🚦 Safe Range Rules
+| Parameter | Normal Range |
+|----------|--------------|
+| Heart Rate | 60 - 100 bpm |
+| Temperature | 36°C - 38°C |
+| Oxygen Level | 95% - 100% |
+
+---
+
+## 🚀 Steps to Run the Project
+1️⃣ Import JavaFX libraries in your IDE  
+2️⃣ Add VM options:
+
+For Windows:
