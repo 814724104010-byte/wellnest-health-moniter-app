@@ -1,0 +1,29 @@
+package com.healthmonitor;
+
+import java.util.Random;
+
+public class HealthDataSimulator implements Runnable {
+    private DashboardController controller;
+    private Random random = new Random();
+
+    public HealthDataSimulator(DashboardController controller) {
+        this.controller = controller;
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            int heartRate = random.nextInt(40) + 60;
+            double temperature = 36 + random.nextDouble() * 2;
+            int oxygen = random.nextInt(6) + 95;
+
+            controller.updateHealthStats(heartRate, temperature, oxygen);
+
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                break;
+            }
+        }
+    }
+}
